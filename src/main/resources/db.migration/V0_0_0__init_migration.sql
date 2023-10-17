@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS `cliente` (
+    `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `nome` TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE IF NOT EXISTS `pedido` (
+    `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `numero_controle` VARCHAR(30) NOT NULL,
+    `data_cadastro` DATETIME NOT NULL,
+    `nome` VARCHAR(50) NOT NULL,
+    `valor` BIGINT NOT NULL,
+    `quantidade` BIGINT NOT NULL,
+    `valor_total` BIGINT NOT NULL,
+    `cod_cliente` BIGINT NOT NULL,
+    FOREIGN KEY (cod_cliente) REFERENCES cliente(id)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;

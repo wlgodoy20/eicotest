@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  test-db:
+    image: mysql:8.0.26
+    platform: linux/x86_64
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: eicon_root_pwd
+      MYSQL_DATABASE: eicon_db_test
+      MYSQL_USER: eicon_test_user
+      MYSQL_PASSWORD: eicon_test_pwd
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge

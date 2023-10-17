@@ -1,0 +1,27 @@
+server:
+  port: 8090
+spring:
+  mvc:
+    format:
+      date-time: iso
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eicon_db_test
+    username: eicon_test_user
+    password: eicon_test_pwd
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true
+
+springdoc:
+  api-docs:
+    path: /docs
+  swagger-ui:
+    path: /docs.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health, info

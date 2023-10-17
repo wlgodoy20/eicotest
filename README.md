@@ -16,3 +16,5 @@ Java 17 e Gradle: Essenciais se você estiver executando comandos fora do Docker
 5. Executando os Testes
     Para certificar-se de que tudo está funcionando corretamente, você pode executar os testes e também obter um relatório de cobertura:
    make test
+6. Swagger disponivel em: 
+ http://localhost:8090/swagger-ui/index.html
